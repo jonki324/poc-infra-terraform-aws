@@ -1,0 +1,12 @@
+version: "3"
+services:
+  terraform:
+    image: hashicorp/terraform
+    container_name: terraform
+    env_file:
+      - .env
+    volumes:
+      - ./src:/terraform
+    working_dir: /terraform
+    entrypoint: ash
+    tty: true
